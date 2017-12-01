@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntApi", "RuntApi\RuntApi.csproj", "{FE55DA34-51D1-4374-B20B-F14BE48FABFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntApi.Com", "RuntApi.Com\RuntApi.Com.csproj", "{4D914F7E-6E2B-42DF-84FC-7A08AC743196}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE55DA34-51D1-4374-B20B-F14BE48FABFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE55DA34-51D1-4374-B20B-F14BE48FABFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE55DA34-51D1-4374-B20B-F14BE48FABFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE55DA34-51D1-4374-B20B-F14BE48FABFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D914F7E-6E2B-42DF-84FC-7A08AC743196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D914F7E-6E2B-42DF-84FC-7A08AC743196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D914F7E-6E2B-42DF-84FC-7A08AC743196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D914F7E-6E2B-42DF-84FC-7A08AC743196}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
