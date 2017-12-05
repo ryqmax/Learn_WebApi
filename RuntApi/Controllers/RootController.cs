@@ -44,7 +44,7 @@ namespace RuntApi.Controllers
         }
         /// <summary>
         /// 指定方法名
-        /// ep:
+        /// ep:rootapi/root/good
         /// </summary>
         [ActionName("good")]
         [HttpPost]
@@ -52,5 +52,17 @@ namespace RuntApi.Controllers
         {
             return Json(new { IsSuccess = true, Msg = "你是个大笨蛋！"});
         }
+
+        /// <summary>
+        /// 变量路径
+        /// ep:variapi/root/maidou
+        /// </summary>
+        [HttpPost]
+        public IHttpActionResult GetArrayList(string type)
+        {
+            var array = new string[] {type, "今", "天", "十", "点", "半", "睡", "觉"};
+            return Json(new { IsSuccess = true, Msg = array });
+        }
+
     }
 }

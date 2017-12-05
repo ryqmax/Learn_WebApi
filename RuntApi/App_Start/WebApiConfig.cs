@@ -22,8 +22,14 @@ namespace RuntApi
             //路由规则
             config.Routes.MapHttpRoute(
                 name: "RootApi",
-                routeTemplate: "{controller}/{action}/id",
+                routeTemplate: "rootapi/{controller}/{action}/{id}",
                 constraints: new { id = @"\d*" },//参数约束，配置0和多个数字
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "VariableApi",
+                routeTemplate: "variapi/{controller}/{type}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
