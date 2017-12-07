@@ -10,6 +10,9 @@ using RuntApi.Com.Entity;
 
 namespace RuntApi.Controllers
 {
+    /// <summary>
+    /// api路径
+    /// </summary>
     public class RootController : ApiController
     {
         /// <summary>

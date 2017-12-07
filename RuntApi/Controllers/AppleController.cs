@@ -10,6 +10,9 @@ using RuntApi.Models;
 
 namespace RuntApi.Controllers
 {
+    /// <summary>
+    /// api返回类型
+    /// </summary>
     [RoutePrefix("ngy/found")]
     public class AppleController : ApiController
     {
@@ -84,11 +87,11 @@ namespace RuntApi.Controllers
         }
         /// <summary>
         /// 其他的返回类型
-        /// ngy/found/ifican?type=1
+        /// ngy/found/ifyoucan?type=1
         /// </summary>
-        [Route("ifican")]
+        [Route("ifyoucan")]
         [HttpPost]
-        public IHttpActionResult IfICan(int type)
+        public IHttpActionResult IfYouCan(int type)
         {
             if (type == 1)
                 return Content(HttpStatusCode.OK, "OK");//返回值和http状态码
@@ -102,9 +105,9 @@ namespace RuntApi.Controllers
         /// 自定义返回类型
         /// ngy/found/ifyoucan
         /// </summary>
-        [Route("ifyoucan")]
+        [Route("ifican")]
         [HttpPost]
-        public IHttpActionResult IfYouCan()
+        public IHttpActionResult IfICan()
         {
             var msg = new[] {"我", "也", "想", "成", "为", "你", "眼", "中", "的", "我"};
             return new ApiResult(msg, Request);
