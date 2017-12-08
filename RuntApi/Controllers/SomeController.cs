@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Runtime.Remoting.Messaging;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using RuntApi.Com.Entity;
 
@@ -107,7 +102,95 @@ namespace RuntApi.Controllers
         {
             return Json($"The birds are gone to the {data.Direct}.");
         }
+        /// <summary>
+        /// post请求Content-Type的类型默认为：application/x-www-form-urlencoded
+        /// 也就是说post请求默认是将表单里面的数据的key/value形式发送到服务器，
+        /// 而如果使用application/json，则表示将前端的数据以序列化过的json传递到后端，
+        /// 后端要把它变成实体对象，还需要一个反序列化的过程
+        /// $.ajax({
+        ///     type: 'post',
+        ///     url: "http://enlin.api.cn/some/wooden",
+        ///     contentType: "application/json",
+        ///     data: JSON.stringify({ Name: "roof" }),
+        ///     success:function(result){}
+        /// });
+        /// </summary>
+        [Route("wooden")]
+        [HttpPost]
+        public IHttpActionResult Wooden(Goods goods)
+        {
+            return Json($"The wooden has a red {goods.Name}.");
+        }
+        /// <summary>
+        /// post传递数组
+        /// $.ajax({
+        ///     type: 'post',
+        ///     url: "http://enlin.api.cn/some/cloud",
+        ///     contentType: "application/json",
+        ///     data: JSON.stringify(["red", "white", "orange"]),
+        ///     success:function(result){}
+        /// });
+        /// </summary>
+        [Route("cloud")]
+        [HttpPost]
+        public IHttpActionResult Clouds(string[] strs)
+        {
+            return Json($"The blue sky and {strs[1]} clouds.");
+        }
+        /// <summary>
+        /// post传递多个实体类
+        /// $.ajax({
+        ///     type: 'post',
+        ///     url: "http://enlin.api.cn/some/lake",
+        ///     contentType: "application/json",
+        ///     data: JSON.stringify([{ Name: "chicken" },{ Name: "duck" },{ Name: "fish" }]),
+        ///     success:function(result){}
+        /// });
+        /// </summary>
+        [Route("lake")]
+        [HttpPost]
+        public IHttpActionResult Lake(List<Goods> list)
+        {
+            return Json($"The lake has no {list[2].Name} but light.");
+        }
+        #endregion
 
+        #region Put请求
+        /// <summary>
+        /// put请求一般用于对象的更新,用法和post请求基本相同
+        /// $.ajax({
+        ///     type: 'put',
+        ///     url: "http://enlin.api.cn/some/memory",
+        ///     contentType: "application/json",
+        ///     data: "{\"Accident\":\"branches\"}",
+        ///     success:function(result){}
+        /// });
+        /// </summary>
+        [Route("memory")]
+        [HttpPut]
+        public IHttpActionResult Memory(dynamic data)
+        {
+            return Json($"The memory has produced many {data.Accident}.");
+        }
+        #endregion
+
+        #region Delete
+        /// <summary>
+        /// delete请求是用于删除操作的,用法和post也是基本相同
+        /// $.ajax({
+        ///     type: 'delete',
+        ///     url: "http://enlin.api.cn/some/missing",
+        ///     contentType: "application/json",
+        ///     data: JSON.stringify([{ Name: "you" },{ Name: "me" }]),
+        ///     success:function(result){}
+        /// });
+        /// </summary>
+        [Route("missing")]
+        [HttpDelete]
+        public IHttpActionResult Missing(List<Goods> list)
+        {
+            return Json($"The missing has swallowed {list[1].Name} up.");
+        }
         #endregion
     }
 }
