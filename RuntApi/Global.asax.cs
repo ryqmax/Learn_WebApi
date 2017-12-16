@@ -9,6 +9,7 @@ namespace RuntApi
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            //GlobalConfiguration.Configuration.Filters.Add(new ApiExceptionFilterAttribute());
         }
     }
 }
