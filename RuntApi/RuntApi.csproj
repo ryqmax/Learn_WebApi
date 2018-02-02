@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AppleController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\RootController.cs" />
     <Compile Include="Controllers\SomeController.cs" />
     <Compile Include="Global.asax.cs">
